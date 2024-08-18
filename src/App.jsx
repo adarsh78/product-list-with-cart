@@ -45,7 +45,7 @@ const App = () => {
     const itemsToOrder = Object.keys(cart).filter(
       (itemName) => cart[itemName] > 0
     );
-    setIsOpen(true)
+    setIsOpen(true);
   };
 
   const handleStartNewOrder = () => {
@@ -55,15 +55,13 @@ const App = () => {
         acc[item.name] = 0;
         return acc;
       }, {})
-    )
-    setIsOpen(false)
+    );
+    setIsOpen(false);
   };
 
   return (
     <>
-    { isOpen && (
-      <div className="overlay"></div>
-    )}
+      {isOpen && <div className="overlay"></div>}
       <main className={`p-6 bg-[hsl(20,50%,98%)] lg:flex lg:items-start`}>
         <div>
           <header className="text-[hsl(14,65%,9%)] text-[2.5rem] md:pl-[150px] lg:pl-[23px] font-bold mb-7">
@@ -87,6 +85,7 @@ const App = () => {
                     />
                     <img
                       src={da.image.mobile}
+                      alt={`${da.image.mobile.slice(8)}`}
                       className="rounded-lg lg:w-[270px]"
                     />
                   </picture>
@@ -190,7 +189,6 @@ const App = () => {
                       className="border-[1px] border-[hsl(7,20%,60%)] rounded-full w-4 h-4 cursor-pointer"
                       onClick={() => handleDecrementItem(itemName)}
                     />
-
                   </div>
                 ))}
 
@@ -260,7 +258,10 @@ const App = () => {
               .map((itemName) => {
                 const item = data.find((item) => item.name === itemName);
                 return (
-                  <div className="flex items-center gap-4 border-b-[1px] border-[hsl(13,31%,94%)] pb-5" key={itemName}>
+                  <div
+                    className="flex items-center gap-4 border-b-[1px] border-[hsl(13,31%,94%)] pb-5"
+                    key={itemName}
+                  >
                     <img
                       src={
                         data.find((item) => item.name === itemName)?.image
@@ -289,7 +290,6 @@ const App = () => {
                   </div>
                 );
               })}
-
 
             <div className="flex items-center justify-between mt-2">
               <p className="text-[hsl(12,20%,44%)] font-semibold text-sm">
