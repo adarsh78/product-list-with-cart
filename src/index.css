@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap");
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: "Red Hat Text", sans-serif;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
